@@ -58,7 +58,7 @@ resource "azurerm_linux_virtual_machine" "test01_vm" {
 
   admin_ssh_key {
     username   = "delta"
-    public_key = file("hellgateRSA.pub")
+    public_key = file("HellgateRSA.pub")
   }
 
   os_disk {
