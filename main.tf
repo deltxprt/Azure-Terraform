@@ -39,11 +39,11 @@ resource "azurerm_network_interface" "nic_test01" {
   }
 }
 
-resource "azurerm_ssh_public_key" "hellgatersa" {
-  name                = "hellgatersa"
+resource "azurerm_ssh_public_key" "azure-ssh" {
+  name                = "azure-ssh"
   resource_group_name = "dev"
   location            = "canada central"
-  public_key          = file("HellgateRSA.pub")
+  public_key          = file("azure-delta.pub")
 }
 
 resource "azurerm_linux_virtual_machine" "test01_vm" {
@@ -58,7 +58,7 @@ resource "azurerm_linux_virtual_machine" "test01_vm" {
 
   admin_ssh_key {
     username   = "delta"
-    public_key = file("HellgateRSA.pub")
+    public_key = file("azure-delta.pub")
   }
 
   os_disk {
