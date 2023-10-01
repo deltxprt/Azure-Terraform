@@ -39,7 +39,7 @@ resource "azurerm_network_interface" "nic_test01" {
   }
 }
 
-resource "azurerm_ssh_public_key" "hellgatrsa" {
+resource "azurerm_ssh_public_key" "hellgatersa" {
   name                = "hellgatersa"
   resource_group_name = "dev"
   location            = "canada central"
