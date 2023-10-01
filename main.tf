@@ -39,13 +39,6 @@ resource "azurerm_network_interface" "nic_test01" {
   }
 }
 
-resource "azurerm_ssh_public_key" "hellgated" {
-  name                = "hellgateed"
-  resource_group_name = "dev"
-  location            = "canada central"
-  public_key          = file("hellgateED.pub")
-}
-
 resource "azurerm_ssh_public_key" "hellgatrsa" {
   name                = "hellgatersa"
   resource_group_name = "dev"
@@ -65,7 +58,7 @@ resource "azurerm_linux_virtual_machine" "test01_vm" {
 
   admin_ssh_key {
     username   = "delta"
-    public_key = file("hellgateED.pub")
+    public_key = file("hellgateRSA.pub")
   }
 
   os_disk {
